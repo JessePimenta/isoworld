@@ -15,6 +15,35 @@ body {
   margin: 0;
 }
 
+.mobile-warning {
+  display: none;
+  opacity: 0
+}
+
+
+a:link {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+
+}
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+
+}
+
+a:active {
+    text-decoration: underline;
+    color: white;
+
+}
+
 
 #primary_nav_wrap
 {
@@ -135,18 +164,18 @@ h1
 	border: 2px solid black;
 	background-color: #fff;
 }
-#top1, #top2
+#design, #top2
 {
 	border: 2px solid white;
 	background-color: black;
   overflow-x: scroll;
 }
-#left1, #left2
+#web, #gif
 {
 	border: 2px solid white;
 	background-color: black;
 }
-#right1, #right2
+#right1, #about
 {
 	border: 2px solid white;
 	background-color: black;
@@ -165,24 +194,36 @@ div {
 
 
 
+
  @media (max-width: 1100px) {
-  /*#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+  #ground, #design, #top2, #web, #gif, #right1, #about, #shadow1, #shadow2 {
   margin-left: -150px;
   transition: 1s;
-}*/
+}
 }
 
 @media (max-width: 1008px) {
-  /*#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2
-  {
-  margin-left: -200px;
-  margin-top: 0px;
-  transition: 1s;
-  }*/
+
+
+  .mobile-warning {
+    display: block;
+    padding-top: 300px;
+    margin: 0 auto;
+    text-align: center;
+    transition: 1s;
+    opacity: 1;
+  }
+
+  .cube-container {
+    display: none;
+  }
+  #ground, #design, #top2, #web, #gif, #right1, #about, #shadow1, #shadow2 {
+    display: none;
+}
 }
 
 @media (max-width: 840px) {
-/*#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+/*#ground, #design, #top2, #web, #gif, #right1, #about, #shadow1, #shadow2 {
     margin-left: -255px;
     margin-top: 10px;
     transform: rotate(5deg) skew(7deg, -5deg) scale(0.7) !important;
@@ -190,7 +231,7 @@ div {
   }*/
 }
 @media (max-width: 684px) {
-/*#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+/*#ground, #design, #top2, #web, #gif, #right1, #about, #shadow1, #shadow2 {
     margin-left: -335px;
     margin-top: 10px;
     transform: rotate(5deg) skew(7deg, -5deg) scale(0.4) !important;
@@ -198,7 +239,7 @@ div {
   }*/
 }
 @media (max-width: 601px) {
-/*#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+/*#ground, #design, #top2, #web, #gif, #right1, #about, #shadow1, #shadow2 {
     margin-left: -355px;
     margin-top: 10px;
     transform: rotate(5deg) skew(7deg, 9deg) scale(0.5) !important;
@@ -282,6 +323,20 @@ li > .github, .experiments, .contact, .about, .web, .design , .resume, .sound, .
   opacity: 1;
 }
 
+.contact-container {
+  margin: 0 auto;
+  text-align: center;
+  display: none;
+  vertical-align: middle;
+  padding-top: 180px;
+}
+
+iframe {
+    display: none;
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
 
 /*A rip in time*/
 .scene {
@@ -313,7 +368,7 @@ canvas {
 }
 
 .design-image {
-  opacity: 0;
+  opacity: 1;
   display: none;
   width: 100%;
   transition: 1s

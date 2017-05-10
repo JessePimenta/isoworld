@@ -1,0 +1,109 @@
+@import url(https://fonts.googleapis.com/css?family=Share+Tech);
+
+.container {
+  display: none;
+}
+
+#greeting {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#message {
+  text-align: center;
+  margin: 0 auto;
+  font-family: hack;
+  font-weight: 900;
+  font-size: 11px;
+  color: #FF9800;
+  text-shadow: 0 0 16px rgba(255, 255, 255, .9);
+  animation: pulse .9s infinite;
+}
+
+h3 {
+  font-size: 11px;
+}
+
+#identity-results, #resume, #loading-alpha-div, #loadingH1, #loadingMessage2 {
+  margin-top: 20px;
+  font-family: hack;
+  font-weight: 900;
+  font-size: 11px;
+  padding-left: 20px;
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.9);
+  color: #FF9800;
+  animation: pulse .9s infinite;
+}
+
+i {
+  font-size: 24px;
+  color: #00ebd4;
+  animation: pulse .9s infinite;
+}
+
+.block {
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.cursor:after {
+  content: "_";
+  opacity: 0;
+  animation: cursor 1s infinite;
+}
+
+.sign:before {
+  content: "> ";
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#loading-alpha-div, .img-div {
+  display: none;
+}
+
+img:hover {
+  /*margin: 50px 0;*/
+  animation: pulse .9s infinite;
+}
+
+#loadingMessage2 {
+  display: none;
+}
+
+.sub-item {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.inline {
+  display: inline;
+  margin-left: 10px;
+}
