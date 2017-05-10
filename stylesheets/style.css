@@ -1,0 +1,326 @@
+@font-face {
+  src: url('/font/lineto-circular-book.woff');
+  font-family: circular-book;
+
+}
+
+html,
+body {
+  background: black;
+  font-family: eskapade-fraktur, sans-serif;
+  font-weight: normal;
+   overflow-y: scroll;
+   cursor: crosshair !important;
+  color: white;
+  margin: 0;
+}
+
+
+#primary_nav_wrap
+{
+    margin:auto;
+    text-align:center;
+}
+
+#primary_nav_wrap ul
+{
+	list-style:none;
+  text-align:center;
+  display: inline-block;
+	position:relative;
+	margin:auto;
+	padding:0;
+}
+
+#primary_nav_wrap ul a
+{
+	text-decoration:none;
+	line-height:32px;
+  display:block;
+	padding:0 15px;
+	font-family:inherit;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+#primary_nav_wrap ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0;
+}
+
+#primary_nav_wrap ul li.current-menu-item
+{
+	background:#ddd
+}
+
+#primary_nav_wrap ul li:hover
+{
+}
+
+#primary_nav_wrap ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#fff;
+	padding:0
+}
+
+#primary_nav_wrap ul ul li
+{
+	float:none;
+	width:200px
+}
+
+#primary_nav_wrap ul ul a
+{
+	line-height:120%;
+	padding:10px 15px
+}
+
+#primary_nav_wrap ul ul ul
+{
+	top:0;
+	left:100%
+}
+
+#primary_nav_wrap ul li:hover > ul
+{
+	display:block
+}
+
+
+
+/*#primary_nav_wrap ul
+{
+	list-style:none;
+  text-align:center;
+  display: inline-block;
+	position:relative;
+	margin:auto;
+	padding:0;
+  position: fixed;
+  z-index: 11;
+}*/
+
+/*#primary_nav_wrap ul a {
+  text-decoration: none;
+  line-height:32px;
+  display:block;
+  padding:0 15px;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 2px;
+}*/
+
+
+p {
+    letter-spacing: 1px;
+    text-align: center;
+    margin: auto;
+    padding-top: 3px;
+}
+
+h1
+{color: white;/* padding-left: 40px; */}
+
+
+#ground
+{
+	border: 2px solid black;
+	background-color: #fff;
+}
+#top1, #top2
+{
+	border: 2px solid white;
+	background-color: black;
+  overflow-x: scroll;
+}
+#left1, #left2
+{
+	border: 2px solid white;
+	background-color: black;
+}
+#right1, #right2
+{
+	border: 2px solid white;
+	background-color: black;
+}
+#shadow1, #shadow2
+{
+	background-color: black;
+	border: 2px solid white;
+	color: white;
+}
+
+
+div {
+    background: black;
+}
+
+
+
+ @media (max-width: 1100px) {
+  #ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+  margin-left: -150px;
+  transition: 1s;
+}
+}
+
+@media (max-width: 1008px) {
+  #ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2
+  {
+  margin-left: -200px;
+  margin-top: 0px;
+  transition: 1s;
+  }
+}
+
+@media (max-width: 840px) {
+#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+    margin-left: -255px;
+    margin-top: 10px;
+    transform: rotate(5deg) skew(7deg, -5deg) scale(0.7) !important;
+    transition: 1s;
+  }
+}
+@media (max-width: 684px) {
+#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+    margin-left: -335px;
+    margin-top: 10px;
+    transform: rotate(5deg) skew(7deg, -5deg) scale(0.4) !important;
+    transition: 1s;
+  }
+}
+@media (max-width: 601px) {
+#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+    margin-left: -355px;
+    margin-top: 10px;
+    transform: rotate(5deg) skew(7deg, 9deg) scale(0.5) !important;
+    transition: 1s;
+  }
+}
+
+.iconic-fork {
+  opacity: 0;
+  color:white;
+  margin-left: -70px;
+  padding-top: 0px;
+}
+.iconic-beaker {
+  opacity: 0;
+  color:white;
+  margin-left: -100px;
+  padding-top: 0px;
+}
+
+.iconic-envelope-closed {
+  opacity: 0;
+  color:white;
+  margin-left: -80px;
+  padding-top: 0px;
+}
+
+.iconic-brain {
+  opacity: 0;
+  color:white;
+  margin-left: -70px;
+  padding-top: 0px;
+}
+
+.iconic-keyboard {
+  opacity: 0;
+  color:white;
+  margin-left: -80px;
+  padding-top: 0px;
+}
+.iconic-eye-open {
+  opacity: 0;
+  color:white;
+  margin-left: -110px;
+  padding-top: 0px;
+}
+.iconic-file-gif {
+  opacity: 0;
+  color:white;
+  margin-left: -70px;
+  padding-top: 0px;
+}
+.iconic-script {
+  opacity: 0;
+  color:white;
+  margin-left: -90px;
+  padding-top: 0px;
+}
+.iconic-audio-spectrum {
+  opacity: 0;
+  color:white;
+  margin-left: -70px;
+  padding-top: 0px;
+}
+
+.iconic-x-thin {
+    color: white;
+    margin-top: -17px;
+    z-index: 40;
+    opacity: 0;
+    display: none;
+    position: absolute;
+    margin-left: 670px;
+}
+
+a .iconic-x-thin {
+  display: none;
+}
+
+li > .github, .experiments, .contact, .about, .web, .design , .resume, .sound, .gif, .sound {
+  opacity: 1;
+}
+
+
+/*A rip in time*/
+.scene {
+  border-radius: 0;
+  bottom: 0;
+  height: 600px;
+  left: 0;
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1240px;
+  z-index: 20;
+}
+.scene:after {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/836/snow-static2.gif);
+  bottom: 0;
+  content: '';
+  left: 0;
+  opacity: 0.15;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+canvas {
+  display: block;
+}
+
+.design-image {
+  opacity: 0;
+  display: none;
+  width: 100%;
+  transition: 1s
+}
+.web-image {
+  opacity: 0;
+  display: none;
+  width: 100%;
+  transition: 1s
+}
