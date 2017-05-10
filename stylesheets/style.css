@@ -166,44 +166,44 @@ div {
 
 
  @media (max-width: 1100px) {
-  #ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+  /*#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
   margin-left: -150px;
   transition: 1s;
-}
+}*/
 }
 
 @media (max-width: 1008px) {
-  #ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2
+  /*#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2
   {
   margin-left: -200px;
   margin-top: 0px;
   transition: 1s;
-  }
+  }*/
 }
 
 @media (max-width: 840px) {
-#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+/*#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
     margin-left: -255px;
     margin-top: 10px;
     transform: rotate(5deg) skew(7deg, -5deg) scale(0.7) !important;
     transition: 1s;
-  }
+  }*/
 }
 @media (max-width: 684px) {
-#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+/*#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
     margin-left: -335px;
     margin-top: 10px;
     transform: rotate(5deg) skew(7deg, -5deg) scale(0.4) !important;
     transition: 1s;
-  }
+  }*/
 }
 @media (max-width: 601px) {
-#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
+/*#ground, #top1, #top2, #left1, #left2, #right1, #right2, #shadow1, #shadow2 {
     margin-left: -355px;
     margin-top: 10px;
     transform: rotate(5deg) skew(7deg, 9deg) scale(0.5) !important;
     transition: 1s;
-  }
+  }*/
 }
 
 .iconic-fork {
