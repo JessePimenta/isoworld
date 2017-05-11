@@ -27,8 +27,8 @@ var initProgram = setTimeout(function(){
       var $CSSFrameworks = "CSS FRAMEWORKS: BOOTSTRAP | SEMANTIC UI";
       var $CSSPre = "CSS PREPROCESSORS: SASS | LESS | CSS3";
       var $frontEndAnimation = "FRONT END ANIMATION: CANVAS | HTML5 | SVG";
-    var $cmsDevelopment = "WORDPRESS DEVELOPMENT: WORDPRESS";
-      var $wordpress = "WORDPRESS: CUSTOM THEMING | PLUGINS";
+    // var $cmsDevelopment = "WORDPRESS DEVELOPMENT: WORDPRESS";
+      // var $wordpress = "WORDPRESS: CUSTOM THEMING | PLUGINS";
     var $design = "DESIGN CORE: ADOBE SUITE";
       var $webDesign = "WEB DESIGN: PHOTOSHOP CC | SKETCH ";
       var $branding = "ILLUSTRATIONS & BRANDING: ILLUSTRATOR CC | PHOTOSHOP CC";
@@ -176,24 +176,24 @@ var initProgram = setTimeout(function(){
                }else{
                   $('#front-end-animation').removeClass("cursor");
                   setTimeout(function() {
-                        initCMSDevelopment(0);
-                     }, 1500);
-               }
-         }
-         function initCMSDevelopment(i){
-            $('#cms-span').addClass("fa fa-wordpress")
-            $('#CMS-development').addClass("cursor").text($cmsDevelopment.substring(0, i));
-               if(i < $cmsDevelopment.length){
-                  setTimeout(function(){
-                      initCMSDevelopment(i + 1);
-                  }, 35);
-               }else{
-                  $('#CMS-development').removeClass("cursor");
-                  setTimeout(function() {
                         initDesign(0);
                      }, 1500);
                }
          }
+        //  function initCMSDevelopment(i){
+        //     $('#cms-span').addClass("fa fa-wordpress")
+        //     $('#CMS-development').addClass("cursor").text($cmsDevelopment.substring(0, i));
+        //        if(i < $cmsDevelopment.length){
+        //           setTimeout(function(){
+        //               initCMSDevelopment(i + 1);
+        //           }, 35);
+        //        }else{
+        //           $('#CMS-development').removeClass("cursor");
+        //           setTimeout(function() {
+        //                 initDesign(0);
+        //              }, 1500);
+        //        }
+        //  }
         //  function initWordpress(i){
         //     $('#wordpress').addClass("sign cursor").text($wordpress.substring(0, i));
         //        if(i < $wordpress.length){

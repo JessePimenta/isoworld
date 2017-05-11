@@ -373,11 +373,12 @@ var isoworld = function(config){
 				var pane = (typeof elem.id == "string") ? document.getElementById(elem.id) : elem.id;
 				pane.style.width = 720 + "px";
 				pane.style.left = elem.cur.left - -140 + "px" ;
-				pane.style.top = elem.cur.top + "px";
+				pane.style.top = elem.cur.top + 50 + "px";
 				pane.style.height = 650 + "px";
-				pane.style.overflow = "scroll";
+				pane.style.overflow = "hidden";
 				transform(pane, elem.cur.rotate, elem.cur.skewX, elem.cur.skewY);
 				setTimeout(function(){
+					pane.style.overflow = "scroll";
 					animate(elem);
 				}, elem.interval);
 			}
@@ -385,6 +386,11 @@ var isoworld = function(config){
 			{
 				elem.cur.step = 1;
 				elem.transformed = false;
+				document.body.onClick = function(){
+					elem.cur.step = -1;
+					elem.transformed = false;
+				}
+
 				if(elem.onExpandEnd)
 				{
 					elem.onExpandEnd();
@@ -450,23 +456,6 @@ var isoworld = function(config){
 			}
 		}
 	};
-
-	$('.design-image').click(function(elem){
-		$('#graphic-tag').show();
-		$('#top1').animate({
-			width: '150px',
-			height: '150px',
-			position: 'absolute',
-			overflow: 'scroll',
-			top: '0px',
-			left: '56.8406px',
-			cursor: 'crosshair',
-			zIndex: 4,
-		},400)
-		.css("transform", 'rotate(-45deg) skew(15deg, 15deg)')
-
-
-	})
 
 	var handler = function(e){
 		var target = get_event_target(e);

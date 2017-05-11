@@ -7,6 +7,14 @@
 #greeting {
   text-align: center;
   margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+div#identity-results {
+    padding-left: 0px;
+    font-size: 14px;
+    padding-top: 30px;
+    padding-bottom: 40px;
 }
 
 #message {
@@ -14,21 +22,32 @@
   margin: 0 auto;
   font-family: hack;
   font-weight: 900;
-  font-size: 11px;
+  font-size: 16px;
   color: #FF9800;
+  padding-top: 20px;
   text-shadow: 0 0 16px rgba(255, 255, 255, .9);
   animation: pulse .9s infinite;
 }
 
 h3 {
-  font-size: 11px;
+  font-size: 16px;
+}
+
+div#resume {
+    padding-left: 20px;
+    font-size: 13px;
+}
+
+h3#front-end {
+    font-size: 14px !important;
+    margin-left: 40px;
 }
 
 #identity-results, #resume, #loading-alpha-div, #loadingH1, #loadingMessage2 {
   margin-top: 20px;
   font-family: hack;
   font-weight: 900;
-  font-size: 11px;
+  font-size: 18px;
   padding-left: 20px;
   text-shadow: 0 0 16px rgba(255, 255, 255, 0.9);
   color: #FF9800;
@@ -61,7 +80,7 @@ i {
 .cursor:after {
   content: "_";
   opacity: 0;
-  animation: cursor 1s infinite;
+  animation: cursor .5s infinite;
 }
 
 .sign:before {
@@ -94,6 +113,7 @@ img:hover {
   animation: pulse .9s infinite;
 }
 
+
 #loadingMessage2 {
   display: none;
 }
@@ -106,4 +126,163 @@ img:hover {
 .inline {
   display: inline;
   margin-left: 10px;
+}
+
+
+/*glitch*/
+
+@keyframes noise-anim {
+  0% {
+    clip: rect(57px, 9999px, 84px, 0);
+  }
+  5% {
+    clip: rect(61px, 9999px, 66px, 0);
+  }
+  10% {
+    clip: rect(67px, 9999px, 3px, 0);
+  }
+  15% {
+    clip: rect(35px, 9999px, 69px, 0);
+  }
+  20% {
+    clip: rect(2px, 9999px, 84px, 0);
+  }
+  25% {
+    clip: rect(13px, 9999px, 88px, 0);
+  }
+  30% {
+    clip: rect(60px, 9999px, 61px, 0);
+  }
+  35% {
+    clip: rect(94px, 9999px, 4px, 0);
+  }
+  40% {
+    clip: rect(79px, 9999px, 54px, 0);
+  }
+  45% {
+    clip: rect(15px, 9999px, 31px, 0);
+  }
+  50% {
+    clip: rect(60px, 9999px, 65px, 0);
+  }
+  55% {
+    clip: rect(52px, 9999px, 36px, 0);
+  }
+  60% {
+    clip: rect(16px, 9999px, 89px, 0);
+  }
+  65% {
+    clip: rect(66px, 9999px, 79px, 0);
+  }
+  70% {
+    clip: rect(72px, 9999px, 84px, 0);
+  }
+  75% {
+    clip: rect(83px, 9999px, 83px, 0);
+  }
+  80% {
+    clip: rect(2px, 9999px, 34px, 0);
+  }
+  85% {
+    clip: rect(14px, 9999px, 39px, 0);
+  }
+  90% {
+    clip: rect(53px, 9999px, 14px, 0);
+  }
+  95% {
+    clip: rect(93px, 9999px, 82px, 0);
+  }
+  100% {
+    clip: rect(3px, 9999px, 66px, 0);
+  }
+}
+.glitch:hover:after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: -1px 0 red;
+  top: 0;
+  color: white;
+  background: black;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim 2s infinite linear alternate-reverse;
+}
+
+@keyframes noise-anim-2 {
+  0% {
+    clip: rect(28px, 9999px, 16px, 0);
+  }
+  5% {
+    clip: rect(17px, 9999px, 31px, 0);
+  }
+  10% {
+    clip: rect(76px, 9999px, 47px, 0);
+  }
+  15% {
+    clip: rect(62px, 9999px, 40px, 0);
+  }
+  20% {
+    clip: rect(87px, 9999px, 46px, 0);
+  }
+  25% {
+    clip: rect(98px, 9999px, 57px, 0);
+  }
+  30% {
+    clip: rect(76px, 9999px, 27px, 0);
+  }
+  35% {
+    clip: rect(11px, 9999px, 51px, 0);
+  }
+  40% {
+    clip: rect(30px, 9999px, 85px, 0);
+  }
+  45% {
+    clip: rect(11px, 9999px, 82px, 0);
+  }
+  50% {
+    clip: rect(9px, 9999px, 21px, 0);
+  }
+  55% {
+    clip: rect(30px, 9999px, 10px, 0);
+  }
+  60% {
+    clip: rect(30px, 9999px, 1px, 0);
+  }
+  65% {
+    clip: rect(23px, 9999px, 56px, 0);
+  }
+  70% {
+    clip: rect(7px, 9999px, 74px, 0);
+  }
+  75% {
+    clip: rect(45px, 9999px, 8px, 0);
+  }
+  80% {
+    clip: rect(12px, 9999px, 39px, 0);
+  }
+  85% {
+    clip: rect(76px, 9999px, 90px, 0);
+  }
+  90% {
+    clip: rect(41px, 9999px, 77px, 0);
+  }
+  95% {
+    clip: rect(7px, 9999px, 93px, 0);
+  }
+  100% {
+    clip: rect(14px, 9999px, 31px, 0);
+  }
+}
+.glitch:hover:before {
+  content: attr(data-text);
+  position: absolute;
+  left: 25px;
+  text-shadow: 1px 0 blue;
+  top: 0;
+  color: white;
+  background: black;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: noise-anim-2 15s infinite linear alternate-reverse;
 }
