@@ -437,6 +437,12 @@ canvas {
   width: 100%;
   transition: 1s
 }
+.experiment-image {
+  opacity: 0;
+  display: none;
+  width: 100%;
+  transition: 1s
+}
 
 .box-headline {
     /*padding-top: 75px;*/

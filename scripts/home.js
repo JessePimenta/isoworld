@@ -18,18 +18,20 @@ $('#design,.design').click(function(){
   $('.design-image').css("display",'block')
   $('.design-image').animate({opacity:1},400)
 
-  // $('.design-image').toggle()
 })
-// toggle web content
 $('#web,.web').click(function(){
   $('.masonry-web').css('display','block')
   $('.web-image').css("display",'block')
   $('.web-image').animate({opacity:1},400)
-  // $('.design-image').toggle()
 })
+$('#experiments,.experiments').click(function(){
+  $('.masonry-gif').css('display','block')
+  $('.experiment-image').css("display",'block')
+  $('.experiment-image').animate({opacity:1},400)
+})
+
 $('#resume-pane,.resume').click(function(){
   $('.iconic-file-pdf').css('visibility','visible')
-  // $('.design-image').toggle()
 })
 
 
