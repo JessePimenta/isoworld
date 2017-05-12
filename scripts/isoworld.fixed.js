@@ -372,7 +372,7 @@ var isoworld = function(config){
 				elem.cur.step++;
 				var pane = (typeof elem.id == "string") ? document.getElementById(elem.id) : elem.id;
 				pane.style.width = 720 + "px";
-				pane.style.left = elem.cur.left - -140 + "px" ;
+				pane.style.left = elem.cur.left - -115 + "px" ;
 				pane.style.top = elem.cur.top + 50 + "px";
 				pane.style.height = 650 + "px";
 				pane.style.overflow = "hidden";
@@ -381,6 +381,10 @@ var isoworld = function(config){
 					pane.style.overflow = "scroll";
 					animate(elem);
 				}, elem.interval);
+				if (window.innerWidth > 1800){
+					console.log('large screen')
+					pane.style.left = -154 + "px" ;
+					}
 			}
 			else
 			{

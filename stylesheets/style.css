@@ -23,6 +23,20 @@ _::-webkit-full-page-media, _:future, :root .safari_only {
  display:none !important;
 }
 
+.toggle-box {
+    position: absolute;
+    top: 20px;
+}
+
+.toggle-box > h1 {
+    font-size: 10px;
+    font-family: hack;
+    position: absolute;
+    width: 200px;
+    top: 4px;
+    left: 20px;
+}
+
 html,
 body {
   background: black;
@@ -33,7 +47,7 @@ body {
   cursor: crosshair !important;
   color: white;
   margin: 0;
-  height: 800px;
+  height: auto;
 }
 
 .mobile-warning {
@@ -194,7 +208,7 @@ h1
 
 #ground
 {
-	border: 2px solid black;
+	/* border: 2px solid black; */
 	background-color: #fff;
 }
 #design, #contact
@@ -219,6 +233,14 @@ h1
 	color: white;
 }
 
+.toggle-box h1 {
+
+  animation: on-off-screen 1s infinite ease-out;
+  animation-direction: alternate;
+  -webkit-animation-direction: alternate;
+}
+
+
 
 
 
@@ -230,10 +252,10 @@ h1
   }
 }
 
-@media (min-width: 1920px) {
- #ground, #design, #contact, #web, #gif, #experiments, #about, #resume-pane, #sound {
- margin-left: 320px;
- transition: 1s;
+@media screen and (min-width: 1800px) {
+ #ground, #design, #contact, #web, #gif, #experiments, #about, #resume-pane, #sound{
+ margin-left: 300px !important;
+ /*transition: 1s;*/
   }
 }
 
@@ -261,6 +283,10 @@ h1
   #ground, #design, #contact, #web, #gif, #experiments, #about, #resume-pane, #sound {
     display: none;
 }
+
+.pulsate {
+  display: none;
+}
 }
 
 @media (max-width: 840px) {
@@ -286,6 +312,13 @@ h1
     transform: rotate(5deg) skew(7deg, 9deg) scale(0.5) !important;
     transition: 1s;
   }*/
+}
+
+
+.iconic-arrow-right-fill {
+color: white;
+position: absolute;
+animation: pulse 9s infinite;
 }
 
 .iconic-fork {
@@ -551,6 +584,17 @@ canvas {
   transform: scale(0.9);
 }
 
+@keyframes on-off-screen {
+
+  0% {
+    left: 20px;
+  }
+  100% {
+    left: -100px;
+  }
+}
+
+
 /* Pulse */
 @-webkit-keyframes hvr-pulse {
   25% {
@@ -718,8 +762,8 @@ canvas {
 .hvr-pop:hover, .hvr-pop:focus, .hvr-pop:active {
   -webkit-animation-name: hvr-pop;
   animation-name: hvr-pop;
-  -webkit-animation-duration: 0.3s;
-  animation-duration: 0.3s;
+  -webkit-animation-duration: 0.3s infinite;
+  animation-duration: 0.3s infinite;
   -webkit-animation-timing-function: linear;
   animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
@@ -989,6 +1033,31 @@ canvas {
   animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
+}
+
+
+span.iconic.iconic-arrow-right-fill {
+    position: absolute;
+    top: -8px;
+    left: 101px;
+}
+
+.pulsate {
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: infinite;
+    opacity: 0.5;
+    color: #ffa630;
+}
+@-webkit-keyframes pulsate {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1.0;
+    }
+    100% {
+        opacity: 0.5;
+    }
 }
 
 

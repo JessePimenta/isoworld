@@ -1,7 +1,11 @@
 if($(window).width() <= 470) {
-window.location = "https://jp-la.co/mobile";
+window.location = "http://j-p.zone/mobile";
 }
 
+// $('.toggle-box h1').animate({left: "-100px"},1000).animate({left:'20px'},1000)
+
+var windowWidth = $(window).width();
+console.log(windowWidth)
 
 if (navigator.userAgent.indexOf('Safari') && !navigator.userAgent.indexOf('Chrome')) {
   $('.nav').css("display","none");
@@ -38,13 +42,14 @@ $('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').click(fu
 })
 
 
-
+// toggle design
 $('#design,.design').click(function(){
   $('.masonry').css('display','block')
   $('.design-image').css("display",'block')
   $('.design-image').animate({opacity:1},400)
 
 })
+// toggle web
 $('#web,.web').click(function(){
   $('.masonry-web').css('display','block')
   $('.web-image').css("display",'block')
@@ -385,5 +390,15 @@ function hideContent() {
   $('.box-headline').animate({opacity:1},400)
 
 
+
+}
+
+function hideNav() {
+  $('#primary_nav_wrap').hide(400)
+  $('.toggle-box').hide(400)
+}
+function showNav() {
+  $('#primary_nav_wrap').show(400)
+  $('.toggle-box').show(400)
 
 }
