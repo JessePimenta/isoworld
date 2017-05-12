@@ -1,0 +1,58 @@
+.mobile-container {
+  width: 100%;
+  padding-top: 100px;
+}
+.mobile-container > .masonry-mobile > .item > .design-image {
+  display: block !important;
+}
+.mobile-container > .masonry-mobile > a > .item > .web-image {
+  display: block !important;
+  opacity: 1;
+}
+.mobile-container > .masonry-mobile > a > .item > .experiment-image {
+  display: block !important;
+  opacity: 1;
+}
+.mobile-container > .masonry-mobile > .masonry-web > a > .item > .web-image {
+  display: block !important;
+  opacity: 1;
+}
+
+body {
+  height: auto !important;
+  transition: all 1s;
+  font-family: eskapade-fraktur, sans-serif;
+}
+
+.item:hover {
+    border: 2px solid white;
+}
+.item:active {
+    border: 2px solid white;
+}
+
+
+.iconic-file-pdf {
+    /* opacity: 1; */
+    color: white !important;
+    margin: 0 auto !important;
+    visibility: visible !important;
+    padding-top: 0px !important;
+    left: 160px !important;
+    top: -77px !important;
+    font-size: 50px !important;
+}
+
+#mobile-res {
+  font-family: eskapade-fraktur, sans-serif;
+  padding-left: 10px;
+}
+
+
+header.me {
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+    padding-top: 50px;
+    margin-bottom: -50px;
+}

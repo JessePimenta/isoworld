@@ -1,16 +1,42 @@
-// hide / show design content
+if($(window).width() <= 470) {
+window.location = "https://jp-la.co/mobile";
+}
 
-$('#design,.design,#contact,.contact,#web,.web,#gif,.gif,#experiments,.experiments,#about,.about,#resume-pane,.resume,#sound').click(function(){
-  $('.box-headline').css("margin-top","20px")
+
+if (navigator.userAgent.indexOf('Safari') && !navigator.userAgent.indexOf('Chrome')) {
+  $('.nav').css("display","none");
+  console.log('its safari')
+}
+else {
+}
+
+var clickCount = 0;
+$('.design,.resume,.experiments,.web').click(function(){
+    clickCount = (clickCount == 2) ? 0: clickCount;
+    if(clickCount == 0){
+      $('.box-headline').css("opacity","0")
+      // $('.box-headline').css("margin-top","20px")
+      $('a .iconic-x-thin').css("display","block")
+      $('a .iconic-x-thin').css("margin-top","0px")
+      $('a .iconic-x-thin').animate({opacity:1},400)
+
+    }else if(clickCount == 1){
+      $('.box-headline').animate({opacity: 1},400)
+      $('#experiments-tag').css("opacity","0")
+    }
+    clickCount++;
+});
+
+
+$('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').click(function(){
   $('.box-headline').css("opacity","0")
+  // $('.box-headline').css("margin-top","20px")
   $('a .iconic-x-thin').css("display","block")
+  $('a .iconic-x-thin').css("margin-top","0px")
   $('a .iconic-x-thin').animate({opacity:1},400)
 
 })
 
-$('#design,#contact,#web,#gif,#experiments,#about,#shadow1,#sound').click(function(){
-  $('.object_1').css('overflow-x','scroll !important')
-})
 
 
 $('#design,.design').click(function(){
@@ -28,6 +54,12 @@ $('#experiments,.experiments').click(function(){
   $('.masonry-gif').css('display','block')
   $('.experiment-image').css("display",'block')
   $('.experiment-image').animate({opacity:1},400)
+
+})
+$('#gif,.gif').click(function(){
+  $('.masonry-gif-image').css('display','block')
+  $('.gif-image').css("display",'block')
+  $('.gif-image').animate({opacity:1},400)
 })
 
 $('#resume-pane,.resume').click(function(){
@@ -340,13 +372,18 @@ $('#sound').click(function(){
 
 
 function hideContent() {
-  $('.design-image').css("display",'none')
-  $('.box-headline').css("margin-top","0px")
+  $('.masonry').css("display",'none')
+  // $('.box-headline').css("margin-top","0px")
   $('.web-image').css("display",'none')
-  $('#graphic-tag').show()
-  $('#web-tag').show()
+  $('.gif-image').css("display",'none')
+  $('.experiment-image').css("display",'none')
+  // $('#cv').css("display",'none')
+  // $('#graphic-tag').show()
+  // $('#web-tag').show()
   $('.iconic-x-thin').animate({opacity:0},100)
   $('a .iconic-x-thin').css("display","none")
+  $('.box-headline').animate({opacity:1},400)
+
 
 
 }
