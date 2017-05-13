@@ -371,9 +371,9 @@ var isoworld = function(config){
 			{
 				elem.cur.step++;
 				var pane = (typeof elem.id == "string") ? document.getElementById(elem.id) : elem.id;
-				pane.style.width = 720 + "px";
-				pane.style.left = elem.cur.left - -115 + "px" ;
-				pane.style.top = elem.cur.top + 50 + "px";
+				pane.style.width = 1000 + "px";
+				pane.style.left = elem.cur.left - 50 + "px" ;
+				pane.style.top = elem.cur.top + 40 + "px";
 				pane.style.height = 650 + "px";
 				pane.style.overflow = "hidden";
 				transform(pane, elem.cur.rotate, elem.cur.skewX, elem.cur.skewY);
@@ -381,7 +381,7 @@ var isoworld = function(config){
 					pane.style.overflow = "scroll";
 					animate(elem);
 				}, elem.interval);
-				if (window.innerWidth > 1800){
+				if (window.innerWidth >= 1800){
 					console.log('large screen')
 					pane.style.left = -154 + "px" ;
 					}
@@ -390,10 +390,6 @@ var isoworld = function(config){
 			{
 				elem.cur.step = 1;
 				elem.transformed = false;
-				document.body.onClick = function(){
-					elem.cur.step = -1;
-					elem.transformed = false;
-				}
 
 				if(elem.onExpandEnd)
 				{
@@ -437,15 +433,17 @@ var isoworld = function(config){
 			if(!stop)
 			{
 				elem.cur.step++;
-				var pane = (typeof elem.id == "string") ? document.getElementById(elem.id) : elem.id;
-				pane.style.width = elem.cur.width + "px";
-				pane.style.left = elem.cur.left + "px";
-				pane.style.top = elem.cur.top + "px";
-				pane.style.height = elem.cur.height + "px";
-				transform(pane, elem.cur.rotate, elem.cur.skewX, elem.cur.skewY);
-				setTimeout(function(){
-					animate(elem);
-				}, elem.interval);
+				document.querySelector('.iconic-x-thin').onClick = function(){
+					var pane = (typeof elem.id == "string") ? document.getElementById(elem.id) : elem.id;
+					pane.style.width = elem.cur.width + "px";
+					pane.style.left = elem.cur.left + "px";
+					pane.style.top = elem.cur.top + "px";
+					pane.style.height = elem.cur.height + "px";
+					transform(pane, elem.cur.rotate, elem.cur.skewX, elem.cur.skewY);
+					setTimeout(function(){
+						animate(elem);
+					}, elem.interval);
+				}
 			}
 			else
 			{
@@ -461,6 +459,7 @@ var isoworld = function(config){
 		}
 	};
 
+
 	var handler = function(e){
 		var target = get_event_target(e);
 		var index = hasClass(target);
@@ -470,6 +469,11 @@ var isoworld = function(config){
             pane.style.cursor = "crosshair";
             pane.style.zIndex = "10";
             animate(elem);
+        }else {
+					animate(elem);
+					pane.style.zIndex = elem.form.zIndex;
+					pane.style.zIndex = "2";
+
         }
 	};
 

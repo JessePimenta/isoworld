@@ -21,14 +21,49 @@
 body {
   height: auto !important;
   transition: all 1s;
-  font-family: eskapade-fraktur, sans-serif;
+  font-family: "Work Sans", sans-serif;
+  background: black;
+  color: white;
 }
 
 .item:hover {
     border: 2px solid white;
 }
+
+img {
+  /*transform: scale(1) !important;*/
+}
+
 .item:active {
     border: 2px solid white;
+}
+
+.design-image {
+  /*opacity: 1;*/
+  width: 100%;
+  /*transition: 1s*/
+}
+.web-image {
+  /*opacity: 1;*/
+  width: 100%;
+  /*transition: 1s;*/
+  padding: 0px;
+
+}
+.web-image:hover {
+  /*transform: scale(1.1);*/
+  /*transition: 1s;
+  padding: 30px;*/
+}
+.experiment-image {
+  /*opacity: 1;*/
+  width: 100%;
+  transition: 1s
+}
+.gif-image {
+  /*opacity: 1;*/
+  width: 100%;
+  /*transition: 1s*/
 }
 
 

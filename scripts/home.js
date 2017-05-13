@@ -1,6 +1,12 @@
 if($(window).width() <= 470) {
-window.location = "http://j-p.zone/mobile";
+window.location = "http://m.j-p.zone";
 }
+AOS.init({
+  offset: 200,
+  duration: 600,
+  easing: 'ease-in-sine',
+  delay: 100,
+});
 
 // $('.toggle-box h1').animate({left: "-100px"},1000).animate({left:'20px'},1000)
 
@@ -32,7 +38,18 @@ $('.design,.resume,.experiments,.web').click(function(){
 });
 
 
-$('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').click(function(){
+$('#design,#web,#gif,#experiments,.design,.experiments,.web').click(function(){
+$('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').css('background-color','rgba(0, 0, 0, 1')
+$('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').css('border','1px transparent')
+
+  $('.box-headline').css("opacity","0")
+  // $('.box-headline').css("margin-top","20px")
+  $('a .iconic-x-thin').css("display","block")
+  $('a .iconic-x-thin').css("margin-top","0px")
+  $('a .iconic-x-thin').animate({opacity:1},400)
+
+})
+$('#about,#contact,#resume-pane,.resume,#sound,.sound').click(function(){
   $('.box-headline').css("opacity","0")
   // $('.box-headline').css("margin-top","20px")
   $('a .iconic-x-thin').css("display","block")
@@ -374,7 +391,27 @@ $('#sound').click(function(){
 })
 
 
+// zIndex switching
 
+
+var clicks = 0;
+$('#web,#experiments,#contact,#about,#resume-pane,#gif,#sound,.design,.web,.experiments,.resume,.contact,.about,.gif,.sound').click(function(){
+    clicks = (clicks == 2) ? 0: clicks;
+    if(clicks == 0){
+      $('.design,.web,.experiments,.resume,.contact,.about,.gif').click(function(){
+        $('.web-pane,#experiments,#contact,#about,#resume-pane,#gif').css('z-index','9')
+      })
+
+    }else if(clicks == 1){
+      // $('.design').click(function(){
+        // $('#web,#experiments,#contact,#about,#resume-pane').css('z-index','10')
+      // })
+    }
+    clicks++;
+});
+$('.design').click(function(){
+  $('#web,#experiments,#contact,#about,#resume-pane').css('z-index','9')
+})
 
 function hideContent() {
   $('.masonry').css("display",'none')
