@@ -292,6 +292,143 @@ var isoworld = function(config){
 		}
 	};
 
+	var createMoreCubes = function(){
+		var div = document.createElement("div");
+		div.style.position = "absolute";
+		div.style.top = c.y + "px";
+		div.style.left = c.x + "px";
+		div.style.width = "1px";
+		div.style.height = "1px";
+		div.style.overflow = "visible";
+		document.body.appendChild(div);
+		var createPane = function(id, top, left, rotate, skewX, skewY, zIndex){
+			var pane = (typeof id == "string") ? document.getElementById(id) : id;
+			var ob = {
+				id: id,
+				form:{
+					rotate: rotate,
+					skewX: skewX,
+					skewY: skewY,
+					width: c.size,
+					height: c.size,
+					maxWidth: c.maxSize,
+					maxTop: c.offsetTop-c.y,
+					maxHeight: 800,
+					left: left,
+					maxLeft: Math.round((vp.width-c.maxSize)/2)-c.x,
+					top: top,
+					zIndex: zIndex,
+					offsetX: c.x,
+					offsetY: c.y
+				},
+				cur:{
+					rotate: rotate,
+					skewX: skewX,
+					skewY: skewY,
+					width: c.size,
+					left: left,
+					top: top,
+					step: 1
+				},
+				transformed: true,
+				onToggle: c.onToggle,
+				onExpandStart: c.onExpandStart,
+				onExpandEnd: c.onExpandEnd,
+				onShrinkStart: c.onShrinkStart,
+				onShrinkEnd: c.onShrinkEnd,
+				steps: c.animationSteps,
+				interval: c.animationInterval
+			};
+			var pane = (typeof id == "string") ? document.getElementById(id) : id;
+			pane.parentNode.removeChild(pane);
+			div.appendChild(pane);
+			pane.style.width = c.size + "px";
+			pane.style.height = c.size + "px";
+			pane.style.position = "absolute";
+			pane.style.overflow = "scroll";
+			pane.style.top = top + "px";
+			pane.style.left = left + "px";
+			pane.style.cursor = "crosshair";
+			pane.style.cursor = "crosshair";
+			pane.style.zIndex = 2;
+			pane.style.width = c.maxSize + "px";
+			if(pane.clientHeight < pane.scrollHeight)
+			{
+				ob.form.maxHeight = pane.scrollHeight;
+			}
+			else
+			{
+				ob.form.maxHeight = pane.clientHeight;
+			}
+			pane.style.width = c.size + "px";
+			transform(pane, rotate, skewX, skewY);
+
+			var l = obj.length;
+			obj.push(ob);
+			addClass(pane, "object_" + l);
+			if(c.toggleOnClick)
+			{
+				add_event(pane, "click", handler);
+			}
+			if(typeof id == "string")
+			{
+				for(var i = 0, len = a.length; i < len; i++)
+				{
+					if(a[i].href && a[i].href.indexOf("#") >= 0)
+					{
+						var url = a[i].href.split("#");
+						var ma = window.location.toString().split("#");
+						ma = ma[0];
+						if(url[0] == ma && url[url.length-1] == id)
+						{
+							addClass(a[i], "object_" + l);
+							add_event(a[i], "click", handler);
+						}
+					}
+				}
+			}
+		};
+
+		var sp =c.size*Math.tan(deg2rad(15));
+		var new_width = c.size+sp;
+
+		var sps = sp*Math.sin(deg2rad(15));
+		var spc = sp*Math.cos(deg2rad(15));
+
+		var hh = sp*Math.sqrt(2);
+
+		if(c.top)
+		{
+			if(isIE())
+			{
+				createPane(c.top, 51*c.size/200,hh-(90*c.size/200), -45, 15, 15, 4);
+			}
+			else
+			{
+				createPane(c.top, 0,hh, -45, 15, 15, 4);
+			}
+		}
+		if(c.left)
+		{
+			createPane(c.left, 157/200*c.size,-sps, 15, 15, 15, 5);
+		}
+		if(c.right)
+		{
+			createPane(c.right, c.size*157/200, c.size*167/200, -15, -15, -15, 3);
+		}
+		if(c.shadow)
+		{
+			if(isIE())
+			{
+				createPane(c.shadow, (c.size*(314)/200)+(51*c.size/200), (c.size*(-105/200))-(90*c.size/200), -45, 15, 15, 2);
+			}
+			else
+			{
+				createPane(c.shadow, c.size*(314)/200, c.size*(-105/200), -45, 15, 15, 2);
+			}
+		}
+	};
+
 	this.animate = function(id){
 		var pane = (typeof id == "string") ? document.getElementById(id) : id;
 		var index = hasClass(pane);
@@ -372,7 +509,7 @@ var isoworld = function(config){
 				elem.cur.step++;
 				var pane = (typeof elem.id == "string") ? document.getElementById(elem.id) : elem.id;
 				pane.style.width = 1000 + "px";
-				pane.style.left = elem.cur.left - 50 + "px" ;
+				pane.style.left = elem.cur.left - 25 + "px" ;
 				pane.style.top = elem.cur.top + 40 + "px";
 				pane.style.height = 650 + "px";
 				pane.style.overflow = "hidden";
@@ -607,5 +744,8 @@ var isoworld = function(config){
 	};
 
 	this.construct();
+
+	createMoreCubes()
+
 
 }

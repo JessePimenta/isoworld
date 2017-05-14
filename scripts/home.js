@@ -1,14 +1,29 @@
 if($(window).width() <= 470) {
-window.location = "http://m.j-p.zone";
+window.location = "http://j-p.zone/mobile.html";
 }
-AOS.init({
-  offset: 200,
-  duration: 600,
-  easing: 'ease-in-sine',
-  delay: 100,
-});
+var pageTitle = $("#title").text();
+console.log(pageTitle);
+
+  // Change page title on blur
+  $(window).blur(function() {
+    $("#title").text("please look at me");
+  });
+
+  // Change page title back on focus
+  $(window).focus(function() {
+    $("title").text(pageTitle);
+  });
 
 // $('.toggle-box h1').animate({left: "-100px"},1000).animate({left:'20px'},1000)
+
+$('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound,#ground, .svg-container,.design,.resume,.experiments,.web, .github').draggable()
+$('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound,#ground').animate({opacity: 1},1000)
+
+
+
+
+
+
 
 var windowWidth = $(window).width();
 console.log(windowWidth)
@@ -27,7 +42,7 @@ $('.design,.resume,.experiments,.web').click(function(){
       $('.box-headline').css("opacity","0")
       // $('.box-headline').css("margin-top","20px")
       $('a .iconic-x-thin').css("display","block")
-      $('a .iconic-x-thin').css("margin-top","0px")
+      $('a .iconic-x-thin').css("margin-top","30px")
       $('a .iconic-x-thin').animate({opacity:1},400)
 
     }else if(clickCount == 1){
@@ -38,11 +53,11 @@ $('.design,.resume,.experiments,.web').click(function(){
 });
 
 
-$('#design,#web,#gif,#experiments,.design,.experiments,.web').click(function(){
-$('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').css('background-color','rgba(0, 0, 0, 1')
+$('#design,#web,#gif,#experiments,.design,.experiments,.web,#contact,#about,#sound').click(function(){
+$('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').css('background-color','rgba(0, 0, 0, .99')
 $('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').css('border','1px transparent')
 
-  $('.box-headline').css("opacity","0")
+  $('.box-headline').css("display","none")
   // $('.box-headline').css("margin-top","20px")
   $('a .iconic-x-thin').css("display","block")
   $('a .iconic-x-thin').css("margin-top","0px")
@@ -50,10 +65,10 @@ $('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').css('bor
 
 })
 $('#about,#contact,#resume-pane,.resume,#sound,.sound').click(function(){
-  $('.box-headline').css("opacity","0")
+  $('.box-headline').css("display","none")
   // $('.box-headline').css("margin-top","20px")
   $('a .iconic-x-thin').css("display","block")
-  $('a .iconic-x-thin').css("margin-top","0px")
+  $('a .iconic-x-thin').css("margin-top","30px")
   $('a .iconic-x-thin').animate({opacity:1},400)
 
 })
@@ -395,11 +410,12 @@ $('#sound').click(function(){
 
 
 var clicks = 0;
-$('#web,#experiments,#contact,#about,#resume-pane,#gif,#sound,.design,.web,.experiments,.resume,.contact,.about,.gif,.sound').click(function(){
+$('#web, #design,#experiments,#contact,#about,#resume-pane,#gif,#sound,.design,.web,.experiments,.resume,.contact,.about,.gif,.sound').click(function(){
+  $('.toggle-box').css('display','block')
     clicks = (clicks == 2) ? 0: clicks;
     if(clicks == 0){
-      $('.design,.web,.experiments,.resume,.contact,.about,.gif').click(function(){
-        $('.web-pane,#experiments,#contact,#about,#resume-pane,#gif').css('z-index','9')
+      $('.design,.web,.experiments,.resume,.contact,.about,.gif,.sound').click(function(){
+        $('.web-pane,#experiments,#contact,#about,#resume-pane,#gif,#sound').css('z-index','9')
       })
 
     }else if(clicks == 1){
@@ -439,3 +455,25 @@ function showNav() {
   $('.toggle-box').show(400)
 
 }
+
+function curvedText(time) {
+  var tl   = new TimelineMax({ repeat: -1 });
+  var text = document.querySelector('svg textpath'),
+      path = document.querySelector('svg defs path');
+
+  var from = {
+    transformOrigin: 'center center',
+    rotation: 0
+  };
+
+  var to = {
+    rotation: 360,
+    ease: Linear.easeInOut
+  };
+
+  tl.fromTo([text, path], time, from, to);
+
+  return tl;
+}
+
+curvedText(10);
