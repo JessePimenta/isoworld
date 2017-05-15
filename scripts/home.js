@@ -484,9 +484,9 @@ $('#web, #design,#experiments,#contact,#about,#resume-pane,#gif,#sound,.design,.
     }
     clicks++;
 });
-$('.design').click(function(){
-  $('#web,#experiments,#contact,#about,#resume-pane').css('z-index','9')
-})
+// $('.design').click(function(){
+//   $('#web,#experiments,#contact,#about,#resume-pane').css('z-index','9')
+// })
 
 function hideContent() {
   $('.masonry').css("display",'none')
@@ -536,3 +536,13 @@ function curvedText(time) {
 }
 
 curvedText(10);
+
+
+function ShowHamburgerNav() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}

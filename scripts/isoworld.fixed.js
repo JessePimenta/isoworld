@@ -379,7 +379,7 @@ var isoworld = function(config){
 				pane.style.width = 100 + "%";
 				pane.style.left = elem.cur.left - 150 + "px" ;
 				pane.style.top = elem.cur.top + 40 + "px";
-				pane.style.height = elem.cur.height + "px";
+				pane.style.height = 650 + "px";
 				pane.style.overflow = "hidden";
 				transform(pane, elem.cur.rotate, elem.cur.skewX, elem.cur.skewY);
 				setTimeout(function(){
@@ -388,7 +388,11 @@ var isoworld = function(config){
 				}, elem.interval);
 				if (window.innerWidth >= 1800){
 					console.log('large screen')
-					pane.style.left = -154 + "px" ;
+					pane.style.left = -584 + "px" ;
+					}
+				if (window.innerWidth <= 1280){
+					console.log('13 inch screen')
+					pane.style.left = -347 + "px" ;
 					}
 			}
 			else
