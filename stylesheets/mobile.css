@@ -1,3 +1,33 @@
+#overlay{
+  position:fixed;
+  z-index:99999;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background:rgba(0,0,0,0.96);
+  transition: 1s 0.4s;
+}
+#progress{
+  height:1px;
+  background:#fff;
+  position:absolute;
+  width:0;
+  top:50%;
+  animation: pulsate 3s infinite;
+}
+
+#progstat{
+  font-size:0.7em;
+  letter-spacing: 3px;
+  position:absolute;
+  top:50%;
+  margin-top:-40px;
+  width:100%;
+  text-align:center;
+  color:#fff;
+}
+
 .mobile-container {
   width: 100%;
   padding-top: 100px;
@@ -79,7 +109,7 @@ img {
 }
 
 #mobile-res {
-  font-family: eskapade-fraktur, sans-serif;
+  font-family: 'Work Sans', sans-serif;
   padding-left: 10px;
 }
 

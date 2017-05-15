@@ -30,7 +30,7 @@ var initProgram = setTimeout(function(){
     // var $cmsDevelopment = "WORDPRESS DEVELOPMENT: WORDPRESS";
       // var $wordpress = "WORDPRESS: CUSTOM THEMING | PLUGINS";
     var $design = "DESIGN CORE: ADOBE SUITE";
-      var $webDesign = "WEB DESIGN: PHOTOSHOP CC | SKETCH ";
+      var $webDesign = "DESIGN & UX: PHOTOSHOP CC | SKETCH ";
       var $branding = "ILLUSTRATIONS & BRANDING: ILLUSTRATOR CC | PHOTOSHOP CC";
       var $designAnimation = "ANIMATION DESIGN: AFTER EFFECTS CC | FLASH CC";
 
@@ -180,6 +180,73 @@ var initProgram = setTimeout(function(){
                      }, 1500);
                }
          }
+         function initDesign(i){
+           $('#design-suite').addClass("cursor").text($design.substring(0, i));
+           if(i < $design.length){
+             setTimeout(function(){
+               initDesign(i + 1);
+             }, 35);
+           }else{
+             $('#design-suite').removeClass("cursor");
+             setTimeout(function() {
+               initWebDesign(0);
+             }, 1500);
+           }
+         }
+         function initWebDesign(i){
+           $('#web-design').addClass("sign cursor").text($webDesign.substring(0, i));
+           if(i < $webDesign.length){
+             setTimeout(function(){
+               initWebDesign(i + 1);
+             }, 35);
+           }else{
+             $('#web-design').removeClass("cursor");
+             setTimeout(function() {
+               initBranding(0);
+             }, 1500);
+           }
+         }
+         function initBranding(i){
+           $('#branding').addClass("sign cursor").text($branding.substring(0, i));
+           if(i < $branding.length){
+             setTimeout(function(){
+               initBranding(i + 1);
+             }, 35);
+           }else{
+             $('#branding').removeClass("cursor");
+             setTimeout(function() {
+               initDesignAnimation(0);
+             }, 1500);
+           }
+         }
+         function initDesignAnimation(i){
+           $('#design-animation').addClass("sign cursor").text($designAnimation.substring(0, i));
+           if(i < $designAnimation.length){
+             setTimeout(function(){
+               initDesignAnimation(i + 1);
+             }, 35);
+           }else{
+             //$('#design-animation').removeClass("cursor");
+           }
+         }
+       }
+
+       function initProgramAlpha(i){
+         $("#greeting").addClass("cursor").text(greeting.substring(0, i));
+         if(i < greeting.length){
+           setTimeout(function(){
+             initProgramAlpha(i + 1);
+           }, 35);
+         }else{
+           $("#greeting").removeClass("cursor");
+           initIdentityResults(0);
+         }
+       }
+       initProgramAlpha(0)
+
+     }, 1500);
+
+     initProgram()
         //  function initCMSDevelopment(i){
         //     $('#cms-span').addClass("fa fa-wordpress")
         //     $('#CMS-development').addClass("cursor").text($cmsDevelopment.substring(0, i));
@@ -207,71 +274,3 @@ var initProgram = setTimeout(function(){
         //              }, 1500);
         //        }
         //  }
-          function initDesign(i){
-            $('#design-span').addClass('fa fa-paint-brush');
-            $('#design').addClass("cursor").text($design.substring(0, i));
-               if(i < $design.length){
-                  setTimeout(function(){
-                      initDesign(i + 1);
-                  }, 35);
-               }else{
-                  $('#design').removeClass("cursor");
-                  setTimeout(function() {
-                        initWebDesign(0);
-                     }, 1500);
-               }
-         }
-         function initWebDesign(i){
-            $('#web-design').addClass("sign cursor").text($webDesign.substring(0, i));
-               if(i < $webDesign.length){
-                  setTimeout(function(){
-                      initWebDesign(i + 1);
-                  }, 35);
-               }else{
-                  $('#web-design').removeClass("cursor");
-                  setTimeout(function() {
-                        initBranding(0);
-                     }, 1500);
-               }
-         }
-         function initBranding(i){
-            $('#branding').addClass("sign cursor").text($branding.substring(0, i));
-               if(i < $branding.length){
-                  setTimeout(function(){
-                      initBranding(i + 1);
-                  }, 35);
-               }else{
-                  $('#branding').removeClass("cursor");
-                  setTimeout(function() {
-                        initDesignAnimation(0);
-                     }, 1500);
-               }
-         }
-         function initDesignAnimation(i){
-            $('#design-animation').addClass("sign cursor").text($designAnimation.substring(0, i));
-               if(i < $designAnimation.length){
-                  setTimeout(function(){
-                      initDesignAnimation(i + 1);
-                  }, 35);
-               }else{
-                  //$('#design-animation').removeClass("cursor");
-               }
-         }
-      }
-
-   function initProgramAlpha(i){
-       $("#greeting").addClass("cursor").text(greeting.substring(0, i));
-         if(i < greeting.length){
-             setTimeout(function(){
-                 initProgramAlpha(i + 1);
-             }, 35);
-         }else{
-            $("#greeting").removeClass("cursor");
-            initIdentityResults(0);
-         }
-      }
-      initProgramAlpha(0)
-
-}, 1500);
-
-initProgram()

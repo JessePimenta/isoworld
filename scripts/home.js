@@ -1,8 +1,40 @@
 if($(window).width() <= 470) {
 window.location = "http://j-p.zone/mobile.html";
 }
+
+
+function id(v){return document.getElementById(v); }
+  function loadbar() {
+    var ovrl = id("overlay"),
+        prog = id("progress"),
+        stat = id("progstat"),
+        img = document.images,
+        c = 0;
+        tot = img.length -30 ;
+
+    function imgLoaded(){
+      c += 1;
+      var perc = ((100/tot*c) << 0) +"%";
+      prog.style.width = perc;
+      stat.innerHTML = "Loading... "+ perc;
+      if(c===tot) return doneLoading();
+    }
+    function doneLoading(){
+      ovrl.style.opacity = 0;
+      setTimeout(function(){
+        ovrl.style.display = "none";
+      }, 1200);
+    }
+    for(var i=0; i<tot; i++) {
+      var tImg     = new Image();
+      tImg.onload  = imgLoaded;
+      tImg.onerror = imgLoaded;
+      tImg.src     = img[i].src;
+    }
+  }
+  document.addEventListener('DOMContentLoaded', loadbar, false);
+
 var pageTitle = $("#title").text();
-console.log(pageTitle);
 
   // Change page title on blur
   $(window).blur(function() {
@@ -17,6 +49,18 @@ console.log(pageTitle);
 // $('.toggle-box h1').animate({left: "-100px"},1000).animate({left:'20px'},1000)
 
 $('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound,#ground, .svg-container,.design,.resume,.experiments,.web, .github').draggable()
+// $('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound,#ground, .svg-container,.design,.resume,.experiments,.web, .github').click(function(){
+//   $('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound,#ground').resizable({
+//     aspectRatio: true,
+//     animateEasing: "easeOutBounce",
+//     animate: true,
+//     ghost: true,
+//     helper: "resizable-helper",
+//     "ui-resizable-se": "ui-icon ui-icon-gripsmall-diagonal-se"
+//
+//
+//   });
+// })
 $('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound,#ground').animate({opacity: 1},1000)
 
 
@@ -24,13 +68,10 @@ $('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound,#ground').
 
 
 
-
 var windowWidth = $(window).width();
-console.log(windowWidth)
 
 if (navigator.userAgent.indexOf('Safari') && !navigator.userAgent.indexOf('Chrome')) {
   $('.nav').css("display","none");
-  console.log('its safari')
 }
 else {
 }
@@ -54,13 +95,15 @@ $('.design,.resume,.experiments,.web').click(function(){
 
 
 $('#design,#web,#gif,#experiments,.design,.experiments,.web,#contact,#about,#sound').click(function(){
+
 $('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').css('background-color','rgba(0, 0, 0, .99')
-$('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').css('border','1px transparent')
+$('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').css('border','1px dotted')
+$('#design,#contact,#web,#gif,#experiments,#about,#resume-pane,#sound').css('cursor','grabbing !important')
 
   $('.box-headline').css("display","none")
   // $('.box-headline').css("margin-top","20px")
   $('a .iconic-x-thin').css("display","block")
-  $('a .iconic-x-thin').css("margin-top","0px")
+  $('a .iconic-x-thin').css("margin-top","20px")
   $('a .iconic-x-thin').animate({opacity:1},400)
 
 })
@@ -76,6 +119,7 @@ $('#about,#contact,#resume-pane,.resume,#sound,.sound').click(function(){
 
 // toggle design
 $('#design,.design').click(function(){
+  $('#graphic-tag').css("opacity","0")
   $('.masonry').css('display','block')
   $('.design-image').css("display",'block')
   $('.design-image').animate({opacity:1},400)
@@ -83,25 +127,40 @@ $('#design,.design').click(function(){
 })
 // toggle web
 $('#web,.web').click(function(){
+  $('#web-tag').css("opacity","0")
   $('.masonry-web').css('display','block')
+  $('.masonry-web').css('pointer-events','auto')
   $('.web-image').css("display",'block')
   $('.web-image').animate({opacity:1},400)
 })
 $('#experiments,.experiments').click(function(){
+  $('#experiments-tag').css("opacity","0")
   $('.masonry-gif').css('display','block')
   $('.experiment-image').css("display",'block')
   $('.experiment-image').animate({opacity:1},400)
 
 })
 $('#gif,.gif').click(function(){
+  $('#gif-tag').css("opacity","0")
   $('.masonry-gif-image').css('display','block')
   $('.gif-image').css("display",'block')
   $('.gif-image').animate({opacity:1},400)
 })
 
 $('#resume-pane,.resume').click(function(){
+  $('#resume-tag').css("opacity","0")
   $('.iconic-file-pdf').css('visibility','visible')
 })
+$('#about').click(function(){
+  $('#about-tag').css("opacity","0")
+})
+$('#sound').click(function(){
+  $('#sound-tag').css("opacity","0")
+})
+// $('#contact').click(function(){
+//   $('#sound-tag').css("opacity","0")
+// })
+
 
 
 
@@ -322,13 +381,13 @@ $('#about').click(function(){
           //  }
             function initDesign(i){
               $('#design-span').addClass('fa fa-paint-brush');
-              $('#design').addClass("cursor").text($design.substring(0, i));
+              $('#design-suite').addClass("cursor").text($design.substring(0, i));
                  if(i < $design.length){
                     setTimeout(function(){
                         initDesign(i + 1);
                     }, 35);
                  }else{
-                    $('#design').removeClass("cursor");
+                    $('#design-suite').removeClass("cursor");
                     setTimeout(function() {
                           initWebDesign(0);
                        }, 1500);

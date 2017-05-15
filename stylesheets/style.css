@@ -4,9 +4,38 @@
 
 }
 
-#ground, #design, #contact, #web, #gif, #experiments, #about, #resume-pane, #sound {
+#ground, #design, #contact, #web, #gif, #experiments, #about, #resume-pane, #sound{
 
+}
 
+#overlay{
+  position:fixed;
+  z-index:99999;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  background:rgba(0,0,0,0.96);
+  transition: 1s 0.4s;
+}
+#progress{
+  height:1px;
+  background:#fff;
+  position:absolute;
+  width:0;
+  top:50%;
+  animation: pulsate 3s infinite;
+}
+
+#progstat{
+  font-size:0.7em;
+  letter-spacing: 3px;
+  position:absolute;
+  top:50%;
+  margin-top:-40px;
+  width:100%;
+  text-align:center;
+  color:#fff;
 }
 
 
@@ -109,12 +138,11 @@ body {
   font-family: 'Work Sans', sans-serif;
   font-weight: normal;
   overflow-y: scroll;
-  cursor: crosshair !important;
+  cursor: grabbing;
   color: white;
   margin: 0;
   height: auto;
 }
-
 .mobile-warning {
   display: none;
   opacity: 0
@@ -319,9 +347,8 @@ h1
 
  @media (max-width: 1100px) {
   #ground, #design, #contact, #web, #gif, #experiments, #about, #resume-pane, #sound {
-  margin-left: -150px;
+  /* margin-left: -150px; */
   transition: 1s;
-
   }
 }
 
@@ -516,6 +543,13 @@ li > .contact, .about, .sound, .gif, .sound {
 
 .github {
 opacity: 1;
+}
+
+.ui-icon.ui-icon-gripsmall-diagonal-se {
+  background-image: url('/images/arrow-134-16.png') !important;
+  /*filter: invert(100%) !important;*/
+  transform: rotate(320deg);
+  background-position: 2px 1px;
 }
 
 
@@ -1167,9 +1201,9 @@ canvas {
 
 .iconic-eye-open {
   color: white;
-    position: absolute;
-    top: -100px !important;
-    left: 30px;
+  position: absolute;
+  top: -100px !important;
+  left: 72px;
 }
 
 .pulsate {
