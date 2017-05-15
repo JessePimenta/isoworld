@@ -388,9 +388,9 @@ h1
 
 @media screen and (min-width: 1800px) {
  #ground, #design, #contact, #web, #gif, #experiments, #about, #resume-pane, #sound{
- margin-left: 300px !important;
+  margin-left: 240px !important; 
  /*transition: 1s;*/
-  }
+ }
 }
 
 @media (max-width: 470px) {

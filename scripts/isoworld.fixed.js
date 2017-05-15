@@ -386,9 +386,13 @@ var isoworld = function(config){
 					pane.style.overflow = "scroll";
 					animate(elem);
 				}, elem.interval);
-				if (window.innerWidth >= 1800){
+				if (window.innerWidth >= 1799 ){
 					console.log('large screen')
 					pane.style.left = -584 + "px" ;
+					}
+				if (window.innerWidth > 1440 && window.innerWidth < 1799){
+					console.log('large screen')
+					pane.style.left = -384 + "px" ;
 					}
 				if (window.innerWidth <= 1280){
 					console.log('13 inch screen')

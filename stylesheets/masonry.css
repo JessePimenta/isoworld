@@ -147,7 +147,7 @@
 }
 
 
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 1441px) {
   .masonry {
     display: none;
     -moz-column-count: 1;
